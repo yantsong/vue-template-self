@@ -21,5 +21,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
- img{content:nomarl!important}
+ img{content:normal!important}
 </style>
