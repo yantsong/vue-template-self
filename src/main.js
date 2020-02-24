@@ -3,8 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import appInit from './util/init'
+import Vconsole from 'vconsole'
+import './style/index.scss'
+
+appInit()
 
 Vue.config.productionTip = false
+
+process.env.RELEASE === 'sit' && new Vconsole()
 
 /* eslint-disable no-new */
 new Vue({

@@ -1,0 +1,46 @@
+
+/* generator-layout start各种缩写的Map */
+// $maps:('.f-':'font-size', '.p':'padding');
+@mixin generator-base($map,$from:0,$end:40) {
+
+  @each $key,
+  $value in $map {
+    .#{$key} {
+     @for $index from $from to $end {
+      &#{$index}{
+        #{$value}:#{$index}px;
+      }
+     }
+    }
+  }
+}
+/*generator-layout end */
+
+/*line-clamp Start*/
+%line-clamp {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+@mixin line-clamp($inLine) {
+  @extend %line-clamp;
+  -webkit-line-clamp: $inLine;
+}
+
+@mixin generator-line-clamp($inList, $inPrefix: ".lc-") {
+  #{$inPrefix} {
+    @each $i in $inList {
+      &#{$i} {
+        -webkit-line-clamp: $i;
+        @extend %line-clamp;
+      }
+    }
+  }
+}
+
+/*line-clamp End*/
+
+

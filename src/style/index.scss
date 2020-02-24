@@ -1,0 +1,31 @@
+@import 'reset.css';
+@import 'generator.scss';
+@import 'base.scss';
+
+/* 初始化预设class */
+/*
+$maps: 定义预设的class Map
+example: f-1 = font-size:1px; f-40
+p0 = pading0
+*/
+$maps:(f-: font-size,
+  fw-: font-weigth,
+  lh: line-height,
+  m: margin,
+  mt: margin-top,
+  mr: margin-right,
+  mb: margin-bottom,
+  ml: margin-left,
+  p:  padding,
+  pt: padding-top,
+  pr: padding-right,
+  pb: padding-bottom,
+  pl: padding-left);
+// 预设layout 数字为1-40
+@include generator-base($maps);
+
+/* $line-clamp 预设多行省略*/
+
+$line-clamp-list: (1, 2, 3);
+
+@include generator-line-clamp($line-clamp-list)

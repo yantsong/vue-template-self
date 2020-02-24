@@ -5,13 +5,16 @@
   "author": "song",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "release='sit' webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
-    "build": "node build/build.js"
+    "build:sit": "release='sit' node build/build.js",
+    "build:prod": "release='prod' node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "cssnano": "^3.10.0",
+    "fastclick": "^1.0.6",
     "node-sass": "^4.11.0",
     "postcss-aspect-ratio-mini": "^1.0.1",
     "postcss-cssnext": "^3.1.0",
@@ -20,8 +23,10 @@
     "postcss-write-svg": "^3.0.1",
     "sass": "^1.17.2",
     "sass-loader": "^7.1.0",
+    "vconsole": "^3.3.4",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "xgb-common": "git+ssh://git@gitlab.wallstcn.com:baoer/alliance/h5/xgb-common.git"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

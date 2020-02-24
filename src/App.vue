@@ -1,25 +1,41 @@
+
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
 <script>
+import {getSurgeStockStocks} from '@/services/flash'
+import {homeJinri} from '@/services/api'
 export default {
-  name: 'App'
+  name: 'App',
+  created () {
+    homeJinri().then(
+      res => {
+        console.log(res)
+      }
+    )
+    getSurgeStockStocks().then(
+      res => {
+        console.log(res, 'res')
+      }
+    )
+  }
 }
 </script>
 
-<style>
-@import url(./style/reset.css);
+<style lang="scss">
+// @import url('./style/index.scss');
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
- img{content:normal!important}
+img {
+  content: normal !important;
+}
 </style>
